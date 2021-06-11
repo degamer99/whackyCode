@@ -1,0 +1,128 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title> YOUR LUCK </title>
+		<style type="text/css">
+			div{
+				position: relative;
+				font-size: 75%;
+				top: 20%;
+				text-align: center;
+				
+			}
+			</style>
+		</head>
+			<h2 style="text-align: center"> TEST YOUR LUCK </h2>
+			<p> Guess a number from between the range of your class <br> test your luck as the ultimate guesser or just an unlucky guy </p>
+			<div>
+				<h3> BEGINNER CLASS </h3><hr>
+					<p> Guess a number either 1 or 2: </p>
+				
+			<input type="number" id="collect"> <br>
+				<button onclick="check()"> test your luck </button>
+				<br><br>
+					<p id="tries"> Tries: </p>   
+					<p id="win"> Wins: </p> 
+					<p id="lose"> Loses: </p>
+					</div> <br>
+						<div>
+				<h3> INTERMEDIATE CLASS </h3><hr>
+					<p> Guess a number between 1 and 5: </p>
+				
+			<input type="number" id="collect2"> <br>
+				<button onclick="check2()"> test your luck </button>
+				<br><br>
+					<p id="tries2"> Tries: </p>   
+					<p id="win2"> Wins: </p> 
+					<p id="lose2"> Loses: </p>
+					</div> <br>
+						<div>
+				<h3> ADVANCED CLASS </h3><hr>
+					<p> Guess a number between 1 and 10: </p>
+				
+			<input type="number" id="collect3"> <br>
+				<button onclick="check3()"> test your luck </button>
+				<br><br>
+					<p id="tries3"> Tries: </p>   
+					<p id="win3"> Wins: </p> 
+					<p id="lose3"> Loses: </p>
+					</div>
+		</body>
+		<script type="text/javascript">
+			var times = 0;
+			var wins = 0;
+			var losts = 0;
+			var tries = document.getElementById("tries");
+				 var win = document.getElementById("win");
+				 var lost = document.getElementById("lose");
+			var numb = document.getElementById("collect");
+			var times2 = 0;
+			var wins2 = 0;
+			var losts2 = 0;
+			var tries2 = document.getElementById("tries2");
+				 var win2 = document.getElementById("win2");
+				 var lost2 = document.getElementById("lose2");
+			var numb2 = document.getElementById("collect2");
+			var times3 = 0;
+			var wins3 = 0;
+			var losts3 = 0;
+			var tries3 = document.getElementById("tries3");
+				 var win3 = document.getElementById("win3");
+				 var lost3 = document.getElementById("lose3");
+			var numb3 = document.getElementById("collect3");
+			function check()
+			{ 
+				 
+			var random =  Math.floor(Math.random()* 3);
+		var num = numb.value;
+		if (num == random)
+		{ wins += 1;
+		times += 1;
+		tries.innerHTML = "Tries: " + times.toString();
+		win.innerHTML = "Wins: " + wins.toString();
+			alert("lucky" );
+			
+		} else { losts += 1;
+		 times += 1;
+		tries.innerHTML = "Tries: " + times.toString();
+		lost.innerHTML = "Lose: " + losts.toString();
+			alert("unlucky");}
+				}
+				function check2()
+			{ 
+				 
+			var random2 =  Math.floor(Math.random()* 6);
+		var num2 = numb2.value;
+		if (num2 == random2)
+		{ wins2 += 1;
+		times2 += 1;
+		tries2.innerHTML = "Tries: " + times2.toString();
+		win2.innerHTML = "Wins: " + wins2.toString();
+			alert("lucky" );
+		} else { losts2 += 1;
+		 times2 += 1;
+		tries2.innerHTML = "Tries: " + times2.toString();
+		lost2.innerHTML = "Lose: " + losts2
+		.toString();
+			alert("unlucky");}
+			}
+ function check3()
+			{ 
+				 
+			var random3 =  Math.floor(Math.random()* 11);
+		var num3 = numb3.value;
+		if (num3 == random3)
+		{ wins3 += 1;
+		times3 += 1;
+		tries3.innerHTML = "Tries: " + times3.toString();
+		win3.innerHTML = "Wins: " + wins3.toString();
+			alert("lucky" );
+			
+		} else { losts3 += 1;
+		 times3 += 1;
+		tries3.innerHTML = "Tries: " + times.toString();
+		lost3.innerHTML = "Lose: " + losts3.toString();
+			alert("unlucky");}
+			}
+			</script>
+	</html>

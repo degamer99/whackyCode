@@ -1,0 +1,77 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<style type="text/css">
+			@keyframes move{
+				from{
+					top: 0%;
+				}
+				to{
+					top:88%;
+				}
+			}
+				 #game{
+				 	width: 80%;
+				 	height: 85%;
+				 	padding: 0;
+				 	border: 1px solid Aqua;
+				 	margin: auto;
+				 	background-image: linear-gradient(lightblue, Aqua, white);
+				 }
+				 #player1{
+				 	height: 60px;
+				 	width: 60px;
+				 	position: relative;
+				 	top: 85%;
+				 	left: 40%;
+				 	background-color: black;
+				 	transition-property: background-color;
+				 	transition-duration: 0.5s;
+				 	animation-name: move;
+				 	animation-duration: 3s;	
+				 	animation-iteration-count: infinite;
+				 	animation-timing-function: linear;
+				 	animation-play-state: running;
+				 }
+				 body{
+				 	background-image: linear-gradient(Teal, Aqua, purple);
+				 }
+			</style>
+		</head>
+		<body id="body"><div id="game">
+			<div id="player1"></div>
+			<div id="player2"></div>
+			<div id="player3"></div>
+			<div id="player4"></div>
+</div>	
+</body>
+		<script>
+			var player1 = document.getElementById("player1");
+			var player2 = document.getElementById("player2");
+			var player3 = document.getElementById("player3");
+			var player4 = document.getElementById("player4");
+var player1top = windows.getWindowsComputedStyle(player1).getPropertyValue("top");
+
+player1.addEventListener("animationiteration", spawn);
+			player1.addEventListener("touchstart", kill);
+			var lft = 40;
+			function kill(){
+				if(player1top <= 88)
+			{
+				alert(help);
+			}
+				player1.style.backgroundColor = "rgba(255, 255, 255, 0)";
+			}
+			
+			
+			
+			function spawn(){
+				player1.style.backgroundColor = "rgba(0, 0, 0, 1)";
+				var random = Math.floor(Math.random()*5);
+				var pos = random * 20;
+				player1.style.left = pos.toString() + "%";
+			}
+			
+			
+			</script>
+	</html>
