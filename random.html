@@ -1,33 +1,54 @@
 <!DOCTYPE>
 <html>
-	<head>
-		<style type="text/css">
-			body{
-				background: red;
-				 transition-property: background;
-         transition-duration: 1s;
-			}
-			div{
-				 width: 100%;
-				 height: 100%;
-				 
-			}
-			</style>
-		</head>
-		<body id="body">
-			<div id="click"> </div>
-		</body>
-		<script>
-			var div = document.getElementById("click");
-			div.addEventListener("touchstart", randomcolor);
-			function randomcolor(){
-				var body = document.getElementById("body");
-				var colorarray = [0,0,0];
-				colorarray.forEach(function(val, i, arr){
-			arr[i] = Math.floor(Math.random() * 256);
-				});
-				var color = "rgb(" + colorarray.join() + ")";
-				body.style.background = color;
-			}
-			</script>
-	</html>
+
+<head>
+	<style type="text/css">
+		body {
+			transition: background-color 2s ease-in-out;
+		}
+
+		div {
+			width: 100%;
+			height: 100%;
+
+		}
+	</style>
+</head>
+
+<body>
+</body>
+<script>
+	// 
+	var body = document.querySelector("body");
+
+	// Function to add the touch and click action
+	body.addEventListener("touchstart", randomcolor);
+	body.addEventListener("click", randomcolor);
+
+	// Function to execute myFunction every second
+	function executeEverySecond(callback) {
+		setInterval(randomcolor, 2000); // 1000 milliseconds = 1 second
+	}
+
+
+	function randomcolor() {
+		const color = () => {
+			let colorArray = [0, 0, 0];
+
+			// color a random number between 0 and 255
+			colorArray = colorArray.map(function () {
+				return Math.floor(Math.random() * 256);
+			});
+
+			return colorArray.join();
+		}
+
+		
+		body.style.background = `rgb( ${color()})`;
+	}
+
+	executeEverySecond();
+
+</script>
+
+</html>
